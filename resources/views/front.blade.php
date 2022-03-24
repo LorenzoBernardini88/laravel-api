@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    ciao
+    <div id="app">
+        
+    </div>
+    <script src="{{asset("js/front.js")}}"></script>
 </body>
 </html>
 
