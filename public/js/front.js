@@ -1991,8 +1991,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Main'
+  name: 'Main',
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/posts").then(function (api) {
+      _this.posts = api.data;
+    });
+  }
 });
 
 /***/ }),
@@ -2556,7 +2582,23 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    main\n")])
+  return _c(
+    "div",
+    _vm._l(_vm.posts, function (post, index) {
+      return _c("div", { key: index }, [
+        _c("h1", [_vm._v("Post " + _vm._s(post.id))]),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Titolo: " + _vm._s(post.title))]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Contenuto: " + _vm._s(post.content))]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Autore: " + _vm._s(post.post_author))]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Data: " + _vm._s(post.post_date))]),
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
