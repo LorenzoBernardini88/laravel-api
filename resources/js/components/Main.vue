@@ -6,12 +6,9 @@
             <p>Contenuto: {{post.content}}</p>
             <p>Autore: {{post.post_author}}</p>
             <p>Data: {{post.post_date}}</p>
-            <!-- <ul>
-                Categorie:
-                <li v-for="(category, index) in post.category_id" :key="index">
-                    {{category.category_id['name']}}
-                </li>
-            </ul> -->
+            <p>Categoria: {{post.category ? post.category.name : "-"}}</p>
+            <span> Tags:</span>
+            <span v-for="(tag, index) in post.tags" :key="index">{{tag.name}}</span>
 
 
         </div>

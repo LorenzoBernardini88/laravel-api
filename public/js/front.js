@@ -2002,9 +2002,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   data: function data() {
@@ -2585,17 +2582,34 @@ var render = function () {
   return _c(
     "div",
     _vm._l(_vm.posts, function (post, index) {
-      return _c("div", { key: index }, [
-        _c("h1", [_vm._v("Post " + _vm._s(post.id))]),
-        _vm._v(" "),
-        _c("h2", [_vm._v("Titolo: " + _vm._s(post.title))]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Contenuto: " + _vm._s(post.content))]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Autore: " + _vm._s(post.post_author))]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Data: " + _vm._s(post.post_date))]),
-      ])
+      return _c(
+        "div",
+        { key: index },
+        [
+          _c("h1", [_vm._v("Post " + _vm._s(post.id))]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Titolo: " + _vm._s(post.title))]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Contenuto: " + _vm._s(post.content))]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Autore: " + _vm._s(post.post_author))]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Data: " + _vm._s(post.post_date))]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Categoria: " + _vm._s(post.category ? post.category.name : "-")
+            ),
+          ]),
+          _vm._v(" "),
+          _c("span", [_vm._v(" Tags:")]),
+          _vm._v(" "),
+          _vm._l(post.tags, function (tag, index) {
+            return _c("span", { key: index }, [_vm._v(_vm._s(tag.name))])
+          }),
+        ],
+        2
+      )
     }),
     0
   )
